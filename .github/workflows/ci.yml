@@ -1,6 +1,10 @@
 # File: .github/workflows/ci.yml
 name: CI
 
+permissions:
+  contents: read
+  packages: write
+  
 on:
   push:
     branches: [ master ]
@@ -55,4 +59,4 @@ jobs:
         run: |
           IMAGE=ghcr.io/${{ github.repository }}:${{ github.sha }}
           docker build -t $IMAGE .
-          docker push $IMAGE
+          docker push $IMAGE
