@@ -1,6 +1,10 @@
 # File: .github/workflows/ci.yml
 name: CI
 
+permissions:
+  contents: read
+  packages: write
+  
 on:
   push:
     branches: [ master ]
